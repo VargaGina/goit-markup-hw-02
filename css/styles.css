@@ -1,22 +1,11 @@
-:root {
-    --primary-color: #404BBF;
-    --secondary-color: #4D5AE5;
-    --background-color: #E7E9FC;
-    --text-color: #2E2F42;
-    --contact-hover-color: #606275;
-    --footer-background: #2E2F42;
-    --footer-text-color: #FFFFFF;
-}
-
-
 body {
     font-family: "Roboto", sans-serif;
-    color: var(--text-color);
+    color: #2E2F42;
     margin: 0;
 }
 
 header {
-    border-bottom: 2px solid var(--background-color);
+    border-bottom: 2px solid #E7E9FC;
     padding: 24px 156px;
     display: flex;
     align-items: center;
@@ -28,31 +17,44 @@ nav {
     margin-left: 40px;
 }
 
-
-.menuItems {
+.menuItems,
+.contactItems,
+.filters ul,
+section ul {
     list-style: none;
-    display: flex;
-    gap: 40px;
     padding: 0;
     margin: 0;
+    display: flex;
 }
 
-.menuItems li a {
+.menuItems {
+    gap: 40px;
+}
+
+.contactItems {
+    margin-left: auto;
+    gap: 20px;
+}
+
+.menuItems li a,
+.contactItems a,
+section ul li a {
     text-decoration: none;
-    color: var(--text-color);
+    color: #2E2F42;
     font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
+    transition: color 0.3s ease;
 }
 
 .menuItems .active a {
-    color: var(--primary-color);
+    color: #404BBF;
     position: relative;
 }
 
 .menuItems .active::after {
     content: '';
-    background: var(--primary-color);
+    background: #404BBF;
     width: 100%;
     height: 5px;
     position: absolute;
@@ -61,43 +63,27 @@ nav {
     top: 100%;
 }
 
-
-.contactItems {
-    list-style: none;
-    display: flex;
-    margin-left: auto;
-    gap: 20px;
-    padding: 0;
-    margin: 0;
-}
-
 .contactItems a {
-    text-decoration: none;
-    color: #434455;
     font-weight: 400;
-    font-size: 16px;
-    line-height: 1.5;
-    transition: color 0.3s ease;
+    color: #434455;
 }
 
 .contactItems a:hover,
-.contactItems a:focus {
-    color: var(--contact-hover-color);
+.contactItems a:focus,
+section ul li a:hover,
+section ul li a:focus {
+    color: #606275;
 }
 
-
 .filters ul {
-    list-style: none;
-    display: flex;
     justify-content: center;
     gap: 24px;
     padding: 60px;
-    margin: 0;
 }
 
 .filter-btn {
-    color: var(--secondary-color);
-    background-color: var(--background-color);
+    color: #4D5AE5;
+    background: #E7E9FC;
     border: none;
     padding: 12px 24px;
     border-radius: 4px;
@@ -107,45 +93,27 @@ nav {
 
 .filter-btn:hover,
 .filter-btn:focus {
-    background-color: var(--secondary-color);
+    background: #4D5AE5;
     color: #ffffff;
 }
 
 .filter-btn.all {
-    background-color: var(--secondary-color);
+    background: #4D5AE5;
     color: #ffffff;
 }
 
-
 section ul {
-    list-style: none;
-    display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
-    padding: 0;
     margin: 0 156px;
+    display: grid;
 }
-
-section ul li a {
-    text-decoration: none;
-    color: var(--text-color);
-    display: block;
-    text-align: center;
-    transition: color 0.3s ease;
-}
-
-section ul li a:hover,
-section ul li a:focus {
-    color: var(--primary-color);
-}
-
 
 footer {
-    background-color: var(--footer-background);
-    color: var(--footer-text-color);
+    background: #2E2F42;
+    color: #FFFFFF;
     text-align: center;
     padding: 24px;
     margin-top: 60px;
     font-size: 16px;
-    line-height: 1.5;
 }
