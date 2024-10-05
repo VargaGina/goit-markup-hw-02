@@ -1,162 +1,151 @@
-/:root {
-    /* C5: CSS Variables for the color palette */
-    --color-primary: #000;
-    /* Replace with the dominant text color */
-    --color-background: #fff;
-    /* Replace with the background color */
-    --color-highlight: #007bff;
-    /* Replace with the highlight color for interactive elements */
-    --color-hover-highlight: #0056b3;
-    /* Darker variant of highlight for hover and focus */
-    --color-footer-background: #2c2c54;
-    /* Footer background color */
-    --color-footer-text: #fff;
-    /* Footer text color */
-    --color-contact-hover: #ff9900;
-    /* Color when hovering over contact details */
+:root {
+    --primary-color: #404BBF;
+    --secondary-color: #4D5AE5;
+    --background-color: #E7E9FC;
+    --text-color: #2E2F42;
+    --contact-hover-color: #606275;
+    --footer-background: #2E2F42;
+    --footer-text-color: #FFFFFF;
 }
+
 
 body {
-    /* C6, С7, С8, С9: Font settings for body */
-    font-family: 'Roboto', sans-serif;
-    color: var(--color-primary);
+    font-family: "Roboto", sans-serif;
+    color: var(--text-color);
+    margin: 0;
+}
+
+header {
+    border-bottom: 2px solid var(--background-color);
+    padding: 24px 156px;
+    display: flex;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    margin-left: 40px;
+}
+
+
+.menuItems {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    padding: 0;
+    margin: 0;
+}
+
+.menuItems li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
-    background-color: var(--color-background);
-    margin: 0;
-    padding: 0;
 }
 
-/* General reset for margins and paddings */
-ul,
-li,
-p,
-a,
-img,
-button {
-    margin: 0;
-    padding: 0;
+.menuItems .active a {
+    color: var(--primary-color);
+    position: relative;
+}
+
+.menuItems .active::after {
+    content: '';
+    background: var(--primary-color);
+    width: 100%;
+    height: 5px;
+    position: absolute;
+    border-radius: 6px;
+    left: 0;
+    top: 100%;
+}
+
+
+.contactItems {
     list-style: none;
+    display: flex;
+    margin-left: auto;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.contactItems a {
     text-decoration: none;
-    border: none;
-}
-
-/* Header styles */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1em 2em;
-    background-color: var(--color-background);
-}
-
-header img {
-    width: 115px;
-}
-
-nav ul {
-    display: flex;
-    gap: 1em;
-}
-
-nav ul li a {
-    color: var(--color-primary);
-    font-weight: 500;
-    font-size: 1rem;
-    transition: color 0.3s;
-}
-
-nav ul li a.active {
-    color: var(--color-highlight);
-}
-
-address a {
-    color: var(--color-primary);
+    color: #434455;
     font-weight: 400;
-    font-size: 0.9rem;
-    transition: color 0.3s;
+    font-size: 16px;
+    line-height: 1.5;
+    transition: color 0.3s ease;
 }
 
-/* С4: Contact text in header changes color on hover */
-address a:hover,
-address a:focus {
-    color: var(--color-contact-hover);
+.contactItems a:hover,
+.contactItems a:focus {
+    color: var(--contact-hover-color);
 }
 
-/* Portfolio filter section */
-.portfolio-filter {
-    padding: 1em 2em;
-    background-color: var(--color-background);
-    text-align: center;
-}
 
-.filter-list {
+.filters ul {
+    list-style: none;
     display: flex;
-    gap: 1em;
     justify-content: center;
+    gap: 24px;
+    padding: 60px;
+    margin: 0;
 }
 
 .filter-btn {
-    font-size: 1rem;
-    font-weight: 500;
-    background: none;
-    color: var(--color-primary);
-    padding: 0.5em 1em;
+    color: var(--secondary-color);
+    background-color: var(--background-color);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .filter-btn:hover,
 .filter-btn:focus {
-    background-color: var(--color-highlight);
-    color: var(--color-background);
+    background-color: var(--secondary-color);
+    color: #ffffff;
 }
 
-/* Portfolio section */
+.filter-btn.all {
+    background-color: var(--secondary-color);
+    color: #ffffff;
+}
+
+
 section ul {
+    list-style: none;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2em;
-    padding: 2em;
-}
-
-section ul li {
-    text-align: center;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    padding: 0;
+    margin: 0 156px;
 }
 
 section ul li a {
+    text-decoration: none;
+    color: var(--text-color);
     display: block;
-    color: var(--color-primary);
-    font-weight: 500;
-    font-size: 1rem;
-    margin-top: 0.5em;
-    transition: color 0.3s;
+    text-align: center;
+    transition: color 0.3s ease;
 }
 
 section ul li a:hover,
 section ul li a:focus {
-    color: var(--color-highlight);
+    color: var(--primary-color);
 }
 
-/* Footer styles */
+
 footer {
-    background-color: var(--color-footer-background);
-    color: var(--color-footer-text);
+    background-color: var(--footer-background);
+    color: var(--footer-text-color);
     text-align: center;
-    padding: 2em;
-    font-size: 1rem;
+    padding: 24px;
+    margin-top: 60px;
+    font-size: 16px;
     line-height: 1.5;
-}
-
-/* Button styles */
-button {
-    cursor: pointer;
-}
-
-/* Active state for buttons and links */
-button:hover,
-button:focus,
-a:hover,
-a:focus {
-    color: var(--color-hover-highlight);
 }
